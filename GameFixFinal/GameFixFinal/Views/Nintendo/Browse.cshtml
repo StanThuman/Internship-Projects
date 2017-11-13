@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GameFixFinal.Models.GameLibrary>
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Console)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Developer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+    </tr>
+
+    @foreach(var item in Model){
+        
+        <tr>
+            <td>@Html.DisplayFor(modelInfo => item.Title)</td>
+            <td>@Html.DisplayFor(modelInfo => item.Console)</td>
+            <td>@Html.DisplayFor(modelInfo => item.Genre.Name)</td>
+            <td>@Html.DisplayFor(modelInfo => item.Developer.Name)</td>
+            <td>@Html.DisplayFor(modelInfo => item.Year)</td>
+        </tr>       
+    }
+</table>
+@section Scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

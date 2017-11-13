@@ -1,0 +1,144 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GameFix</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("GameFix", "Index", "Home", new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">                
+                <ul class="nav navbar-nav">                    
+                    <li class="dropdown">
+                        @Html.ActionLink("Home", "Index", "Home")
+                        <ul class="dropdown-menu link-white">
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                        </ul>                                            
+                    </li>
+                    <li class="dropdown">                    
+                        @Html.ActionLink("Nintendo", "Index", "Nintendo")
+                    <ul class="dropdown-menu link-white">
+                        <li>@Html.ActionLink("News", "News", "Nintendo")</li>
+                        <li>@Html.ActionLink("Upcoming Releases", "Upcoming", "Nintendo")</li>
+                        <li>@Html.ActionLink("Browse", "Browse", "Nintendo")</li>
+                        <li class="dropdown-submenu">@Html.ActionLink("Consoles", "", "null")
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Wii U", "About", "Home")</li>
+                                <li>@Html.ActionLink("Wii", "About", "Home")</li>
+                                <li>@Html.ActionLink("Gamecube", "About", "Home")</li>
+                                <li>@Html.ActionLink("Nintendo 64", "About", "Home")</li>
+                                <li>@Html.ActionLink("Super Nintendo", "About", "Home")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Sony", "Index", "Sony")
+                        <ul class="dropdown-menu link-white">
+                            <li>@Html.ActionLink("News", "About", "Home")</li>
+                            <li>@Html.ActionLink("Upcoming Releases", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Browse Catalog","","Browse")</li>
+                            <li class="dropdown-submenu">
+                                @Html.ActionLink("Consoles","","null")
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("PS One", "About", "Home")</li>
+                                    <li>@Html.ActionLink("PlayStation 2", "About", "Home")</li>
+                                    <li>@Html.ActionLink("PS3", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Playstation 4", "About", "Home")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Microsoft", "Index", "Microsoft")
+                        <ul class="dropdown-menu link-white">
+                            <li>@Html.ActionLink("News", "About", "Home")</li>
+                            <li>@Html.ActionLink("Upcoming Releases", "Contact", "Home")</li>
+                            <li class="dropdown-submenu">
+                                @Html.ActionLink("Consoles", "", "null")
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Xbox One", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Xbox 360", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Xbox", "About", "Home")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("PC Master Race", "Index", "PC")
+                        <ul class="dropdown-menu link-white">
+                            <li>@Html.ActionLink("News", "About", "Home")</li>
+                            <li>@Html.ActionLink("Upcoming Releases", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Browse Catalog", "", "Browse")</li>                           
+                        </ul>
+                    </li>                                        
+                </ul>
+                <div id="searchBox">
+                    <table>
+                        <tr>
+                            
+                                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                                {                        
+                                    <td><input type="text" name="search" id="search" /></td>
+                        
+                                    <td><input type="image" alt="Submit" src="~/Content/Images/searchIcon.png" /></td>
+                        
+                                }
+                            
+                        </tr>
+                    </table>
+                </div>                                    
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+    
+    <div id="body-container">
+        <div class="container">
+            <h1>GameFix</h1>
+            <p class="lead">Because addiction...</p>
+
+            <div class="container">
+                @if(@ViewBag.indexPartialView == true){
+                    @Html.Partial("_ImageSliderIndex")       
+                }
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="container body-content my-background add-shadow">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Stan Thuman GameFix Editor, Creator, Writer, Reviewer</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")    
+    @RenderSection("scripts", required: false)
+</body>
+</html>
