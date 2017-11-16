@@ -1,0 +1,5 @@
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Domain\bin\Debug\FinalFantasy14API.Domain.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Domain\bin\Debug\FinalFantasy14API.Domain.pdb
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Domain\obj\Debug\FinalFantasy14API.Domain.csprojResolveAssemblyReference.cache
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Domain\obj\Debug\FinalFantasy14API.Domain.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Domain\obj\Debug\FinalFantasy14API.Domain.pdb

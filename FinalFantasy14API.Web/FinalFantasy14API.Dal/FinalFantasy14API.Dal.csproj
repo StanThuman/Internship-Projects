@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1B58FB7-CE06-4F21-9530-45FA05559E0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalFantasy14API.Dal</RootNamespace>
+    <AssemblyName>FinalFantasy14API.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class_Skills.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class_Traits.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FFClass.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinalFantasy14DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalFantasy14DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinalFantasy14DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinalFantasy14DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalFantasy14DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job_Skills.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job_Traits.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FFClassRepository.cs" />
+    <Compile Include="Repositories\JobRespository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SkillRepository.cs" />
+    <Compile Include="Repositories\TraitRepository.cs" />
+    <Compile Include="Services\FFClassService.cs" />
+    <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\SkillsService.cs" />
+    <Compile Include="Services\TraitsService.cs" />
+    <Compile Include="Skill.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trait.cs">
+      <DependentUpon>FinalFantasy14DB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="FinalFantasy14DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalFantasy14DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FinalFantasy14DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalFantasy14DB.edmx</DependentUpon>
+      <LastGenOutput>FinalFantasy14DB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FinalFantasy14DB.edmx.diagram">
+      <DependentUpon>FinalFantasy14DB.edmx</DependentUpon>
+    </None>
+    <None Include="FinalFantasy14DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalFantasy14DB.edmx</DependentUpon>
+      <LastGenOutput>FinalFantasy14DB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FinalFantasy14API.Domain\FinalFantasy14API.Domain.csproj">
+      <Project>{6e5efba5-99cb-4593-b9b8-2ff4cb5d9527}</Project>
+      <Name>FinalFantasy14API.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

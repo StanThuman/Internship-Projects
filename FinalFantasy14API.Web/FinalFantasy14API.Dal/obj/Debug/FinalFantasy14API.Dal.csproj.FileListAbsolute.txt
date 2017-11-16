@@ -1,0 +1,12 @@
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\FinalFantasy14API.Dal.dll.config
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\FinalFantasy14API.Dal.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\FinalFantasy14API.Dal.pdb
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\EntityFramework.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\FinalFantasy14API.Domain.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\FinalFantasy14API.Domain.pdb
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\EntityFramework.xml
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\obj\Debug\FinalFantasy14API.Dal.csprojResolveAssemblyReference.cache
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\obj\Debug\FinalFantasy14API.Dal.dll
+C:\Users\stanley.lim\Desktop\WebProjects\FinalFantasy14API.Web\FinalFantasy14API.Dal\obj\Debug\FinalFantasy14API.Dal.pdb

@@ -1,0 +1,30 @@
+<div layout-fill layout="column" class="main">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Street Songs</span>
+      </h2>
+      <span flex></span>
+      <md-button aria-label="search locations">
+        <md-tooltip>
+          Search Locations
+        </md-tooltip>
+        <md-icon class="material-icons">search</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+
+  <div flex layout-fil class="placeholder-map" layout="column">
+      <my-googley class="stuff"></my-googley>
+    <md-button class="md-fab btn-add-song" aria-label="add song" ui-sref="search-songs">
+      <md-tooltip>
+        Add Song
+      </md-tooltip>
+      <md-icon class="material-icons">add</md-icon>
+    </md-button>
+  </div>
+  <div class="placeholder-player">
+    <div>PLAYER GOES HERE</div>
+  </div>
+</div>

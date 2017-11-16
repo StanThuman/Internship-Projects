@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3eb23490784143b1a5f0876a33e2b667" Name="Diagram1">
+        <EntityTypeShape EntityType="FF14ModelContext.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Class_Skills" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Class_Traits" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.FFClass" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Job_Skills" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Job_Traits" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Job" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Skill" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FF14ModelContext.Trait" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="FF14ModelContext.FK_Class_Skills_Skills1" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_dbo_Class_Skills_dbo_FFClasses_FFClassId" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Class_Traits_FFClasses" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Class_Traits_Traits" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_dbo_Jobs_dbo_FFClasses_FFClassId" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Job_Skills_Jobs" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Job_Skills_Skills" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Job_Traits_Jobs" ManuallyRouted="false" />
+        <AssociationConnector Association="FF14ModelContext.FK_Job_Traits_Traits" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Class_Skills">
+    <Key>
+      <PropertyRef Name="Class_SkillsId" />
+    </Key>
+    <Property Name="Class_SkillsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FFClassId" Type="int" />
+    <Property Name="SkillsId" Type="int" />
+    <Property Name="Skills_SkillId" Type="int" />
+  </EntityType>
+  <EntityType Name="Class_Traits">
+    <Key>
+      <PropertyRef Name="Class_TraitsId" />
+    </Key>
+    <Property Name="Class_TraitsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FFClassId" Type="int" Nullable="false" />
+    <Property Name="TraitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FFClasses">
+    <Key>
+      <PropertyRef Name="FFClassId" />
+    </Key>
+    <Property Name="FFClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar(max)" />
+    <Property Name="Role" Type="nvarchar(max)" />
+    <Property Name="DiscipleOf" Type="nvarchar(max)" />
+    <Property Name="startingCity" Type="nvarchar(max)" />
+    <Property Name="weaponType" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Job_Skills">
+    <Key>
+      <PropertyRef Name="Job_SkillsId" />
+    </Key>
+    <Property Name="Job_SkillsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="false" />
+    <Property Name="SkillsId" Type="int" Nullable="false" />
+    <Property Name="Skill_SkillId" Type="int" />
+  </EntityType>
+  <EntityType Name="Job_Traits">
+    <Key>
+      <PropertyRef Name="Job_TraitsId" />
+    </Key>
+    <Property Name="Job_TraitsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="false" />
+    <Property Name="TraitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobName" Type="nvarchar(max)" />
+    <Property Name="Role" Type="nvarchar(max)" />
+    <Property Name="PrimaryClassRequirement" Type="nvarchar(max)" />
+    <Property Name="subClassRequirement" Type="nvarchar(max)" />
+    <Property Name="FFClassId" Type="int" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="SkillId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionName" Type="nvarchar(max)" />
+    <Property Name="LevelAcquired" Type="int" Nullable="false" />
+    <Property Name="TpCost" Type="int" />
+    <Property Name="MpCost" Type="nvarchar(max)" />
+    <Property Name="CastTime" Type="nvarchar(max)" />
+    <Property Name="Cooldown" Type="nvarchar(max)" />
+    <Property Name="Range" Type="nvarchar(max)" />
+    <Property Name="Radius" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Traits">
+    <Key>
+      <PropertyRef Name="TraitId" />
+    </Key>
+    <Property Name="TraitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraitName" Type="nvarchar(max)" />
+    <Property Name="LevelAcquired" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Class_Skills_Skills1">
+    <End Role="Skills" Type="Self.Skills" Multiplicity="0..1" />
+    <End Role="Class_Skills" Type="Self.Class_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="SkillId" />
+      </Principal>
+      <Dependent Role="Class_Skills">
+        <PropertyRef Name="SkillsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_Traits_FFClasses">
+    <End Role="FFClasses" Type="Self.FFClasses" Multiplicity="1" />
+    <End Role="Class_Traits" Type="Self.Class_Traits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FFClasses">
+        <PropertyRef Name="FFClassId" />
+      </Principal>
+      <Dependent Role="Class_Traits">
+        <PropertyRef Name="FFClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_Traits_Traits">
+    <End Role="Traits" Type="Self.Traits" Multiplicity="1" />
+    <End Role="Class_Traits" Type="Self.Class_Traits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Traits">
+        <PropertyRef Name="TraitId" />
+      </Principal>
+      <Dependent Role="Class_Traits">
+        <PropertyRef Name="TraitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Class_Skills_dbo_FFClasses_FFClassId">
+    <End Role="FFClasses" Type="Self.FFClasses" Multiplicity="0..1" />
+    <End Role="Class_Skills" Type="Self.Class_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FFClasses">
+        <PropertyRef Name="FFClassId" />
+      </Principal>
+      <Dependent Role="Class_Skills">
+        <PropertyRef Name="FFClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Jobs_dbo_FFClasses_FFClassId">
+    <End Role="FFClasses" Type="Self.FFClasses" Multiplicity="0..1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FFClasses">
+        <PropertyRef Name="FFClassId" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="FFClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Skills_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Job_Skills" Type="Self.Job_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="Job_Skills">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Skills_Skills">
+    <End Role="Skills" Type="Self.Skills" Multiplicity="1" />
+    <End Role="Job_Skills" Type="Self.Job_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="SkillId" />
+      </Principal>
+      <Dependent Role="Job_Skills">
+        <PropertyRef Name="SkillsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Traits_Jobs">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Job_Traits" Type="Self.Job_Traits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="Job_Traits">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Traits_Traits">
+    <End Role="Traits" Type="Self.Traits" Multiplicity="1" />
+    <End Role="Job_Traits" Type="Self.Job_Traits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Traits">
+        <PropertyRef Name="TraitId" />
+      </Principal>
+      <Dependent Role="Job_Traits">
+        <PropertyRef Name="TraitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_Skills" EntityType="Self.Class_Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_Traits" EntityType="Self.Class_Traits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FFClasses" EntityType="Self.FFClasses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job_Skills" EntityType="Self.Job_Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job_Traits" EntityType="Self.Job_Traits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Traits" EntityType="Self.Traits" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Class_Skills_Skills1" Association="Self.FK_Class_Skills_Skills1">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Class_Skills" EntitySet="Class_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Traits_FFClasses" Association="Self.FK_Class_Traits_FFClasses">
+      <End Role="FFClasses" EntitySet="FFClasses" />
+      <End Role="Class_Traits" EntitySet="Class_Traits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Traits_Traits" Association="Self.FK_Class_Traits_Traits">
+      <End Role="Traits" EntitySet="Traits" />
+      <End Role="Class_Traits" EntitySet="Class_Traits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Class_Skills_dbo_FFClasses_FFClassId" Association="Self.FK_dbo_Class_Skills_dbo_FFClasses_FFClassId">
+      <End Role="FFClasses" EntitySet="FFClasses" />
+      <End Role="Class_Skills" EntitySet="Class_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Jobs_dbo_FFClasses_FFClassId" Association="Self.FK_dbo_Jobs_dbo_FFClasses_FFClassId">
+      <End Role="FFClasses" EntitySet="FFClasses" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Skills_Jobs" Association="Self.FK_Job_Skills_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Job_Skills" EntitySet="Job_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Skills_Skills" Association="Self.FK_Job_Skills_Skills">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Job_Skills" EntitySet="Job_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Traits_Jobs" Association="Self.FK_Job_Traits_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Job_Traits" EntitySet="Job_Traits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Traits_Traits" Association="Self.FK_Job_Traits_Traits">
+      <End Role="Traits" EntitySet="Traits" />
+      <End Role="Job_Traits" EntitySet="Job_Traits" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
