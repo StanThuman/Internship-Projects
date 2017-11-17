@@ -25,9 +25,9 @@ to consume the data. For the data, I chose to get information about Final Fantas
   * MeteorJS for the back-end
   * Angular on the front-end
   
- ##Penton Project
+ ## Penton Project
   This project was created in order to learn some of the technologies that were going to be used for a client project
   * Back end
-  
+   
   * Front end
   
