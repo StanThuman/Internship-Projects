@@ -17,12 +17,17 @@ to consume the data. For the data, I chose to get information about Final Fantas
   
 * Web Application
   * Used the .net MVC template to create this
-  * used React on the front end
-  
-  
+  * used React on the front end  
   
  ## Street-Songs
  This was a team project I worked on with two other people. The objective of this app was to play music in a raidius of your GSP location
  using the google maps API and other people using the app in your area would be able to listen and play their own music too.
   * MeteorJS for the back-end
   * Angular on the front-end
+  
+ ##Penton Project
+  This project was created in order to learn some of the technologies that were going to be used for a client project
+  * Back end
+  
+  * Front end
+  
