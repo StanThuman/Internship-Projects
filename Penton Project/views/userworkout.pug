@@ -1,0 +1,74 @@
+extends ./_profile.pug
+
+block profileNavBar
+  a(class='mdl-layout__tab', href='/profile/userinfo') Info
+  a(class='mdl-layout__tab is-active', href='/profile/workout') Workout
+  a(class='mdl-layout__tab', href='/profile/diet') Diet
+
+block profile_views
+  div.workout-page
+    div(class='mdl-grid')
+      div(class='mdl-cell mdl-cell--4-offset')
+        h3 Today's Workout
+
+    div.mdl-grid
+      div.mdl-layout-spacer
+      div(class='title-card mdl-card mdl-shadow--2dp mdl-color--green-50 mdl-cell mdl-cell--7-col')
+        div(class='sub-title')
+          //- span Quote of the day
+        div(class='mdl-card__title')
+          table(class='daily-workout mdl-cell mdl-cell--12-col')
+            tr
+              th Name
+              th Type
+              th Weight
+              th Duration
+              th Sets
+              th Reps
+            if 0 < workouts.length
+              each workout in workouts
+                tr
+                  td=workout.name
+                  td=workout.type
+                  td=workout.weight
+                  td=workout.duration
+                  td=workout.sets
+                  td=workout.reps
+            else
+
+              tr
+                td No workouts added today
+
+
+          //- h2(class='mdle-card__title-text') Someone call CSI. You just killed your workout.
+        div(class='mdl-card__supporting-text')
+          a(href='/profile/workout/edit', class='mdl-button mdl-js-button mdl-button--raised mdl-color--green') Add Workout
+      div.mdl-layout-spacer
+    div.mdl-grid
+      div(class='mdl-cell mdl-cell--5-col mdl-cell--4-offset')
+        h3 Workout History
+
+
+    div.mdl-grid
+      div.mdl-layout-spacer
+      div(class='title-card mdl-card mdl-shadow--2dp mdl-color--green-50 mdl-cell mdl-cell--5-col')
+        div(class='sub-title')
+          //- span Quote of the day
+        div(class='mdl-card__title')
+          table(class='daily-workout mdl-cell mdl-cell--12-col')
+            tr
+              th Date
+
+
+
+            tr
+              td bench press
+
+
+
+
+
+          //- h2(class='mdle-card__title-text') Someone call CSI. You just killed your workout.
+        div(class='mdl-card__supporting-text')
+          //- a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Tips to prepare for your workout
+      div.mdl-layout-spacer

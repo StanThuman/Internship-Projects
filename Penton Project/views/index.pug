@@ -1,0 +1,67 @@
+extends ./_layout.pug
+block selectedLinks
+  a(href='/', class='mdl-layout__tab is-active') Home
+  a(href='/posts', class='mdl-layout__tab') Posts
+  a(href='/profile/userinfo', class='mdl-layout__tab') Profile
+  a(href='/about', class='mdl-layout__tab') About
+  a(href='/addProfile', class='mdl-layout__tab') Add Profile
+
+block template
+  div.home-page
+    if isLoggedin
+      div.mdl-grid
+        div(class='mdl-cell mdl-cell--2-offset')
+          a(href='/createPost', class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color--blue-500') Add post
+
+    div.mdl-grid
+      div.mdl-layout-spacer
+      div(class='title-card mdl-card mdl-shadow--2dp mdl-color--green-100 mdl-cell mdl-cell--8-col')
+        div.sub-title
+          span Quote of the day
+
+        div.mdl-card__title
+          h2.mdle-card__title-text Natural forces within us are the true healers of disease
+        div.mdl-card__supporting-text
+          a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Tips to prepare for your workout
+      div.mdl-layout-spacer
+
+    div(class='mdl-grid')
+      div.mdl-layout-spacer
+      div(class='post-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-color--green-50')
+        div.mdl-card__title
+          h2.mdle-card__title-text TITLE TEXT
+        div.mdl-card__supporting-text lkjfalk falfj alkfj alsdkfjadjkfhakjhadha kljg hkfg hadkgj dfkg dflkgj adkfglj akgja hgakjl ghadfg
+          span adfgadkjfghadfh adglkjad fglkad jgalkd galdf gjkadl gjadlkg jaldg jadlg adlg jadl jgaldk gjadlfg jadlkg jadlk gjadl gja
+          span d glad jgladj galdj gadl gjald gald gladf gadlkf galdf gadl gad;l gkjadflgk jagoij roi jgeoigj ag ag aga
+          span er gaerg aerga eg aeg aegji aerg aeg aeg aeg aerg aerg aerg aeg aeg aega ergae rgarg aerg a
+          span rga rgarga rgaer gaerg ae gaerg aerg aer gaer gaerg aerg aerg aer gaer gaer gaerg aerg aerg a
+          span rgag aerga erga e graegr aga graerg aer g aerg aerga erg ergaerj gaeori gaeruighaerguharg
+          p
+            span lafjaslk fjalskjfalskf jalf jalfjaslkdf jasldkf aslfk asdlf jalsd fjasdf asldkf jasdf kjajsdf
+            span asd flasd falskd falskdf jalsdf jasldf aslkd fjasldk fjasdlkf jasldkf jasldf jasldkf jaslkdf jasf
+            span asdfasldf jasldkf alskdf alskd falskd fals fasldf kasd fasdl fasldkf jasldfj asldfj asldf jasdfa
+             span sdfasldf jaslkdf jalskd fjalskd fjalksd fjalskd fjalskdf jalskd fjaslkd fjalsdk fjlsak j
+        div( class='mdl-card__actions mdl-card--border mdl ')
+          a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Like
+          a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Dislike
+        div.mdl-card__menu
+          span sldjfsldjflkjd
+      div.mdl-layout-spacer
+
+
+
+  //-
+  //- div.mdl-grid
+  //-   div(class='mdl-layout-spacer')
+  //-   -  for (var cardCounter = 0; cardCounter < 5; cardCounter++){
+  //-
+  //-     div(class='basic-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--7-col')
+  //-       div.mdl-card__title
+  //-         h2.mdle-card__title-text Title Text
+  //-       div.mdl-card__supporting-text supporting text for card
+  //-       div( class='mdl-card__actions mdl-card--border')
+  //-         a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Get Started
+  //-       div.mdl-card__menu
+  //-     div(class='mdl-layout-spacer')
+
+    - }

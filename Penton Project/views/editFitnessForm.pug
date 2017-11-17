@@ -1,0 +1,28 @@
+extends ./_profile.pug
+
+block selectedLinks
+  a(href='/', class='mdl-layout__tab') Home
+  a(href='/posts', class='mdl-layout__tab') Posts
+  a(href='/profile/userinfo', class='mdl-layout__tab is-active') Profile
+  a(href='/About', class='mdl-layout__tab') About
+  a(href='/addProfile', class='mdl-layout__tab') Add Profile
+
+block template
+  div.mdl-grid
+    div.mdl-layout-spacer
+    div(class='mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col add-profile-page')
+      h2(class='mdle-card__title-text') Add Profile
+      div(class='mdl-card__title')
+        form(method='POST', action='/profile/edit/userinfo')
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" name='profileInput1')
+            label(class="mdl-textfield__label") Current Weight`
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" name='profileInput2')
+            label(class="mdl-textfield__label") Calorie Goal
+          div(class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label")
+            input(class="mdl-textfield__input" type="text" name='profileInput3')
+            label(class="mdl-textfield__label") Weight Goal
+
+          button(type='submit' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect') Update
+    div.mdl-layout-spacer
