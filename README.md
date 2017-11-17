@@ -24,5 +24,5 @@ to consume the data. For the data, I chose to get information about Final Fantas
  ## Street-Songs
  This was a team project I worked on with two other people. The objective of this app was to play music in a raidius of your GSP location
  using the google maps API and other people using the app in your area would be able to listen and play their own music too.
-  * MeteorJS for the backend
-  * Angular on the front
+  * MeteorJS for the back-end
+  * Angular on the front-end
