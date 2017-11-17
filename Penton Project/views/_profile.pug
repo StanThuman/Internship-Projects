@@ -1,0 +1,31 @@
+extends ./_layout.pug
+
+block selectedLinks
+  a(href='/', class='mdl-layout__tab') Home
+  a(href='/posts', class='mdl-layout__tab') Posts
+  a(href='/profile/userinfo', class='mdl-layout__tab is-active') Profile
+  a(href='/About', class='mdl-layout__tab') About
+  a(href='/addProfile', class='mdl-layout__tab') Add Profile
+
+  //- div(class='mdl-layout mdl-js-layout mdl-layout--fixed-header')
+
+  //-     div(class='mdl-js-ripple-effect mdl-color--green-500 mdl-layout__tab-bar', id='tab-container')
+
+block template
+  if profile
+    div(class='mdl-js-ripple-effect mdl-color--blue-800 mdl-navigation profile-navbar-format mdl-cell--1-offset')
+      block profileNavBar
+    block profile_views
+  else
+
+    div.mdl-grid
+      div.mdl-layout-spacer
+      div(class='error-login mdl-card mdl-shadow--2dp mdl-color--green-50 mdl-cell mdl-cell--8-col')
+        div(class='sub-title')
+          h4 Please login to view profile
+        //-   span Quote of the day
+        div(class='mdl-card__title')
+          //- h1(class='mdl-card__title-text') Please login to view profile
+        div(class='mdl-card__supporting-text')
+          //a(class='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect') Tips to prepare for your workout
+      div.mdl-layout-spacer
