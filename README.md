@@ -1,5 +1,5 @@
 # Internship-Projects
-Consists of some of the projects I worked on during my time as an intern. Because of there policy, I wasn't able to get a vast majority
+Consists of some of the projects I worked on during my time as an intern. Because of their policy, I wasn't able to get a vast majority
 of the web projects I worked on. I have here only partials. I was use this to explain some of the projects I worked on there.
 
 ## Final Fantasy 
